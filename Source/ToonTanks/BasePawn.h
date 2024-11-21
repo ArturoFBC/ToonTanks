@@ -25,7 +25,8 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Combat", meta = (AllowPrivateAccess = true))
 	USceneComponent* ProjectileSpawnPoint;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+protected:
+	void RotateTurret(FVector LookAtTarget);
+
+	void Fire();
 };
