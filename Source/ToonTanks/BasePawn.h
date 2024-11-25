@@ -15,6 +15,8 @@ public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
 
+	void HandleDestruction();
+
 private:
 	UPROPERTY(VisibleAnywhere, Category = "Physics", meta = (AllowPrivateAccess = true))
 	class UCapsuleComponent* CapsuleComp;
@@ -24,6 +26,9 @@ private:
 	UStaticMeshComponent* TurretMesh;
 	UPROPERTY(VisibleAnywhere, Category = "Combat", meta = (AllowPrivateAccess = true))
 	USceneComponent* ProjectileSpawnPoint;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")	
+	TSubclassOf<class AProjectile> ProjectileClass;
 
 protected:
 	void RotateTurret(FVector LookAtTarget);
