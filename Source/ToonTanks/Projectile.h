@@ -26,11 +26,26 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Movement")
 	class UProjectileMovementComponent* ProjectileMovement;
 
+    UPROPERTY(VisibleAnywhere, Category = "Combat")
+	class UParticleSystemComponent* TrailParticles;
+
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 	UPROPERTY(EditAnywhere)
-	float Damage = 10.f;
+	float Damage = 20.f;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class UParticleSystem* HitParticles;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class USoundBase* HitSound;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	USoundBase* LaunchSound;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TSubclassOf<class UCameraShakeBase> HitCameraShakeClass;
 
 public:	
 	// Called every frame

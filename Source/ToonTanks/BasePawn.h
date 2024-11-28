@@ -30,6 +30,15 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")	
 	TSubclassOf<class AProjectile> ProjectileClass;
 
+	UPROPERTY(EditAnywhere, Category = "Combat")	
+	class UParticleSystem* DestructionParticles;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class USoundBase* DestructionSound;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TSubclassOf<class UCameraShakeBase> DestructionCameraShakeClass;
+
 protected:
 	void RotateTurret(FVector LookAtTarget);
 

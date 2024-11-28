@@ -49,4 +49,6 @@ public:
 	void HandleDestruction();
 
 	APlayerController* GetTankPlayerController() const { return PlayerControllerRef; }
+
+	bool bAlive = true;
 };
